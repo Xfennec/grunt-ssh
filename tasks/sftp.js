@@ -15,7 +15,7 @@ module.exports = function (grunt) {
     var utillib = require('./lib/util').init(grunt);
     var fs = require('fs');
     var async = require('async');
-    var Connection = require('ssh2');
+    var { Client } = require('ssh2');
     var path = require('path');
     var sftpHelper = require("./lib/sftpHelpers").init(grunt);
     var ProgressBar = require('progress');
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
 
     var files = this.files;
 
-    var c = new Connection();
+    var c = new Client();
     var done = this.async();
 
     c.on('keyboard-interactive', function(){
