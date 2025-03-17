@@ -1,6 +1,8 @@
 **New owner!** Starting 12-23-2015, I (@israelroldan) am standing on the shoulders of two giants (@chuckmo and @andrewrjones) as maintainer of this project. Contributions are welcome as always.
 (This message will be removed on next release as well).
 
+Fork by @Xfennec with (relatively) up-to-date `ssh2` dependency.
+
 # grunt-ssh
 
 [![Join the chat at https://gitter.im/israelroldan/grunt-ssh](https://badges.gitter.im/israelroldan/grunt-ssh.svg)](https://gitter.im/israelroldan/grunt-ssh?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -215,7 +217,7 @@ options will be ignored. Each is described a bit more below.
 
 A string containing the contents of the private key to use to authenticate with the remote system, you can load this from a file using ```grunt.file.read```. Be careful you don't put this into source control unless you mean it!
 
-If a privateKey and passphrase are required, they 
+If a privateKey and passphrase are required, they
 
 ```js
 options: {
@@ -244,11 +246,15 @@ options: {
          agent: process.env.SSH_AUTH_SOCK
 }
 ```
-If you use ```jshint```, remember to add ```process: true``` in ```globals``` 
+If you use ```jshint```, remember to add ```process: true``` in ```globals```
 
 ###### readyTimeout ```integer```
 
 How often (in milliseconds) to wait for the SSH handshake to complete.
+
+###### debug_ssh2 ```boolean```
+
+If true, the ssh2 library will output debug messages. This is useful for debugging connection issues.
 
 ### sshexec
 
@@ -329,7 +335,7 @@ options: {
 }
 ```
 
-If you use ```jshint```, remember to add ```process: true``` in ```globals``` 
+If you use ```jshint```, remember to add ```process: true``` in ```globals```
 
 ###### readyTimeout ```integer```
 

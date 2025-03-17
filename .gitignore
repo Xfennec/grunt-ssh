@@ -11,3 +11,4 @@ npm-debug.log
 secret*.json
 *.sublime-*
 .idea
+package-lock.json
