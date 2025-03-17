@@ -15,8 +15,8 @@ module.exports = function (grunt) {
 
   grunt.registerMultiTask('sshexec', 'Executes a shell command on a remote machine', function () {
     var utillib = require('./lib/util').init(grunt);
-    var Connection = require('ssh2');
-    var c = new Connection();
+    var { Client } = require('ssh2');
+    var c = new Client();
 
     var done = this.async();
 

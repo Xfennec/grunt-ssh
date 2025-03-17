@@ -100,6 +100,12 @@ exports.init = function (grunt) {
       connectionOptions.agent = options.agent;
     }
 
+    if (options.debug_ssh2) {
+      connectionOptions.debug = function (message) {
+        grunt.log.writeln(message);
+      };
+    }
+
     return connectionOptions;
   };
 

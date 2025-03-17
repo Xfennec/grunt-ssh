@@ -80,10 +80,9 @@ module.exports = function (grunt) {
         command: ['uptime', 'ls', 'uptime'],
         options: {
           host: secret.host,
+          port: secret.port,
           username: secret.username,
-          // private key auth
-          //privateKey: grunt.file.read(secret.privateKeyPath),
-          passphrase: secret.passphrase
+          password: secret.password,
         }
       }
     }
